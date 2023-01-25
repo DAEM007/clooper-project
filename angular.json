@@ -275,6 +275,72 @@
           }
         }
       }
+    },
+    "ClooperCore": {
+      "projectType": "library",
+      "root": "projects/clooper-core",
+      "sourceRoot": "projects/clooper-core/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/clooper-core/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/clooper-core/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/clooper-core/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "tsConfig": "projects/clooper-core/tsconfig.spec.json",
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ]
+          }
+        }
+      }
+    },
+    "ClooperCommon": {
+      "projectType": "library",
+      "root": "projects/clooper-common",
+      "sourceRoot": "projects/clooper-common/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/clooper-common/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/clooper-common/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/clooper-common/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "tsConfig": "projects/clooper-common/tsconfig.spec.json",
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ]
+          }
+        }
+      }
     }
   }
 }
